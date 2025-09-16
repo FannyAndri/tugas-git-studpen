@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+frame[name="header"] {
+  background: linear-gradient(90deg, #56ab2f, #a8e063, #fbc531);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+frame[name="nav"] {
+  background: linear-gradient(90deg, #11998e, #38ef7d, #00c9ff);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+  color: #fff;
+}
+
+frame[name="left"] {
+  background: linear-gradient(180deg, #185a9d, #43cea2, #56ab2f);
+  background-size: 300% 300%;
+  animation: gradientShift 14s ease infinite;
+  color: #fff;
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+frame[name="mainFrame"] {
+  background: linear-gradient(135deg, #2ecc71, #27ae60, #f39c12);
+  background-size: 300% 300%;
+  animation: gradientShift 16s ease infinite;
+  color: #fff;
+  border-radius: 8px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+frame[name="right"] {
+  background: linear-gradient(180deg, #a8e063, #56ab2f, #00c6ff);
+  background-size: 300% 300%;
+  animation: gradientShift 18s ease infinite;
+  color: #fff;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+frame[name="footer"] {
+  background: linear-gradient(90deg, #8e9eab, #56ab2f, #2ecc71);
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease infinite;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffeb3b;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  frameset[cols] {
+    cols: "100%";
+  }
+  frame[name="left"],
+  frame[name="right"] {
+    display: none;
+  }
+}
