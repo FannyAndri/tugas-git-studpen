@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      .container-fluid {
+        height: 100%;
+      }
+      .row {
+        text-align: center;
+        color: white;
+      }
+
+      .header {
+        height: 20%; 
+        background: #28a745;
+        overflow: hidden;
+      }
+      .header .carousel,
+      .header .carousel-inner,
+      .header .carousel-item {
+        height: 100%;
+      }
+      .header .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .navigation { height: 10%; }
+      .content { height: 60%; background: #f1f3f6; }
+      .footer { height: 10%; }
+
+      .sidebar { background: #f8f9fa; border-right: 3px solid #dee2e6; }
+      .main-content { background: #ffffff; padding: 0; }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .sidebar .card {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+      .sidebar .card:hover {
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+      }
+
+      .sidebar .list-group-item {
+        transition: background 0.3s, transform 0.2s;
+      }
+      .sidebar .list-group-item:hover {
+        background: #ffe082;
+        transform: translateX(5px);
+      }
+      .sidebar .list-group-item i {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .sidebar .list-group-item:hover i {
+        transform: translateY(-3px) scale(1.2);
+        color: #ff9800;
+      }
+
+      .navbar {
+        background: linear-gradient(90deg, #0062E6, #33AEFF);
+      }
+      .navbar-brand img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        color: #fff !important;
+        margin-left: 15px;
+        transition: color 0.3s;
+      }
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #ffdd57;
+        transition: width 0.3s ease;
+        -webkit-transition: width 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+        background: #ffdd57;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #ffdd57 !important;
+      }
+
+      .footer {
+        background: linear-gradient(90deg, #33AEFF, #0062E6);
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      .footer a {
+        color: #fff;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+      .footer a:hover {
+        color: #ffdd57;
+        transform: scale(1.1);
+      }
+      .footer img {
+        filter: brightness(0) invert(1);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      .footer img:hover {
+        transform: rotate(15deg) scale(1.2);
+        filter: brightness(1) invert(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-column">
+
+      <div class="row header">
+        <div class="col-md-12 p-0">
+          <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="header/header1.jpg" class="d-block w-100" alt="Slide 1">
+              </div>
+              <div class="carousel-item">
+                <img src="header/header2.jpg" class="d-block w-100" alt="Slide 2">
+              </div>
+              <div class="carousel-item">
+                <img src="header/header3.jpg" class="d-block w-100" alt="Slide 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row navigation align-items-center">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand fw-bold text-warning" href="#">
+                <img src="https://unesa.ac.id/images/gallery/3/b0fd49fc87a8ba9628f1547378bf26f4.jpg" 
+                    alt="Logo Unesa" class="d-inline-block align-text-top">
+                UNESA
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="home.html" target="mainFrame">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="study.html" target="mainFrame">MyStudy</a></li>
+                  <li class="nav-item"><a class="nav-link" href="gallery.html" target="mainFrame">Gallery</a></li>
+                  <li class="nav-item"><a class="nav-link" href="datatables.html" target="mainFrame">Datatable</a></li>
+                  <li class="nav-item"><a class="nav-link" href="login.html" target="_blank">Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-3 sidebar d-flex flex-column align-items-center justify-content-start p-3">
+          <div class="card shadow-sm w-100">
+            <div class="card-header bg-warning fw-bold text-center">
+              🔗 Useful Links
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="https://nfacademy.id" target="_blank" class="text-dark text-decoration-none fw-semibold">
+                  <i class="bi bi-mortarboard-fill me-2"></i> NF Academy
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://nurulfikri.ac.id" target="_blank" class="text-dark text-decoration-none fw-semibold">
+                  <i class="bi bi-bank2 me-2"></i> Nurul Fikri
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://getbootstrap.com" target="_blank" class="text-dark text-decoration-none fw-semibold">
+                  <i class="bi bi-bootstrap-fill me-2"></i> Bootstrap
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://datatables.net" target="_blank" class="text-dark text-decoration-none fw-semibold">
+                  <i class="bi bi-table me-2"></i> DataTables
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://developer.mozilla.org" target="_blank" class="text-dark text-decoration-none fw-semibold">
+                  <i class="bi bi-file-earmark-code-fill me-2"></i> MDN Docs
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-9 main-content">
+          <iframe name="mainFrame" src="home.html"></iframe>
+        </div>
+      </div>
+
+      <div class="row footer align-items-center">
+        <div class="col-md-12 d-flex justify-content-center align-items-center gap-2">
+            <p class="mb-0 me-3 fw-semibold">Dibuat oleh Moch. Fanny Andriansyah - Universitas Negeri Surabaya</p>
+            <a href="https://www.instagram.com/fanny.andriansyah" target="_blank" class="d-flex align-items-center text-white text-decoration-none fw-bold">
+                <img src="Instagram.png" alt="Instagram" width="24" height="24" class="me-2">
+                <span>@fanny.andriansyah</span>
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
